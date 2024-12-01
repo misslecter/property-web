@@ -7,6 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/property-web/', // for custom domain use '/'
   plugins: [
     vue(),
     vueJsx(),
