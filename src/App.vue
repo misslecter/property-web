@@ -7,6 +7,7 @@ import PropertyDescription from "@/components/PropertyDescription.vue";
 import PropertyStats from "@/components/PropertyStats.vue";
 import type { Info } from "@/model/Info.ts";
 import PropertyDownloads from "@/components/PropertyDownloads.vue";
+import PropertyAddress from "@/components/PropertyAddress.vue";
 
 provide(GLOBAL_INFO_KEY, info as unknown as Info);
 </script>
@@ -16,10 +17,13 @@ provide(GLOBAL_INFO_KEY, info as unknown as Info);
     <ImageGallery />
     <div class="grid grid-cols-2 gap-8">
       <div class="flex flex-col gap-8">
-        <PropertyStats />
+        <PropertyAddress />
         <PropertyDownloads />
       </div>
-      <PropertyDescription />
+      <div class="flex flex-col">
+        <PropertyStats />
+        <PropertyDescription />
+      </div>
     </div>
   </div>
 </template>

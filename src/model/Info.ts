@@ -1,6 +1,7 @@
 import type { StatItem } from "@/model/StatItem.ts";
 import type { BasePath } from "@/model/BasePath.ts";
 import type { DownloadFile } from "@/model/DownloadFile.ts";
+import type { Address } from "@/model/Address.ts";
 
 export type Info = {
   name: string;
@@ -8,4 +9,5 @@ export type Info = {
   description: string[];
   stats: StatItem[];
   downloads: BasePath & { files: DownloadFile[] };
+  address: Address;
 };
