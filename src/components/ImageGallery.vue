@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { inject, ref } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/24/outline";
 
 const appBasePath = import.meta.env.VITE_BASE_PATH;
 const info = inject(GLOBAL_INFO_KEY);
@@ -11,25 +12,46 @@ if (!info) {
 
 const { name, gallery } = info;
 const { images, basePath } = gallery;
-const columns: string[][] = [];
 
-const chunkSize = 3;
-for (let i = 0; i < images.length; i += chunkSize) {
-  const chunk = images.slice(i, i + chunkSize);
-  columns.push(chunk);
-}
+const currentIndex = ref<number>(0);
+
+const showNext = () => {
+  currentIndex.value = (currentIndex.value + 1) % images.length;
+};
+
+const showPrevious = () => {
+  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+};
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-    <div v-for="(column, index) in columns" :key="index" class="grid gap-4">
-      <div v-for="image in column" :key="image">
+  <div class="relative h-screen w-full overflow-hidden rounded-xl">
+    <!-- Images -->
+    <div
+      class="flex h-full transition-transform duration-500"
+      :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+    >
+      <div v-for="(image, index) in images" :key="image" class="h-full w-full flex-shrink-0">
         <img
-          class="h-auto max-w-full rounded-lg"
+          class="h-full w-full object-cover"
           :src="`${appBasePath}/public/${name}/${basePath}/${image}`"
-          alt=""
+          :alt="'Image ' + (index + 1)"
         />
       </div>
     </div>
+
+    <!-- Navigation Buttons -->
+    <button
+      @click="showPrevious"
+      class="drop-shadow-3xl absolute left-4 top-1/2 -translate-y-1/2 transform hover:opacity-80"
+    >
+      <ArrowLongLeftIcon class="h-10 w-10 text-white" />
+    </button>
+    <button
+      @click="showNext"
+      class="drop-shadow-3xl absolute right-4 top-1/2 -translate-y-1/2 transform hover:opacity-80"
+    >
+      <ArrowLongRightIcon class="h-10 w-10 text-white" />
+    </button>
   </div>
 </template>

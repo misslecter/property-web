@@ -8,5 +8,7 @@ provide(GLOBAL_INFO_KEY, info);
 </script>
 
 <template>
-  <ImageGallery />
+  <div class="min-h-screen p-4">
+    <ImageGallery />
+  </div>
 </template>
