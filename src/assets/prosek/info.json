@@ -3,6 +3,13 @@
   "address": {
     "value": "Nad Kundratkou, Praha - Prosek"
   },
+  "contact": {
+    "name": "Ing. Tomáš Kouřim",
+    "title": "spolumajitel nemovitosti",
+    "email": "kourim.tomas@seznam.cz",
+    "phone": "+420 723 927 536",
+    "photo": "tomas.webp"
+  },
   "stats": [
     {
       "name": "dispozice",
