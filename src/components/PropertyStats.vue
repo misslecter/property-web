@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import { inject } from "vue";
+import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+
+const info = inject(GLOBAL_INFO_KEY);
+
+if (!info) {
+  throw new Error("Info not provided");
+}
+</script>
+
+<template>
+  <div>
+    <div class="grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4">
+      <div v-for="stat in info.stats" :key="stat.name" class="px-4 py-6 sm:px-6 lg:px-8">
+        <p class="mb-2 flex items-baseline gap-x-2">
+          <span class="text-4xl font-semibold tracking-tight">{{ stat.value }}</span>
+          <span v-if="stat.unit" class="text-sm text-gray-400">{{ stat.unit }}</span>
+        </p>
+        <p class="text-sm font-medium leading-6 text-gray-400">{{ stat.name }}</p>
+      </div>
+    </div>
+  </div>
+</template>
