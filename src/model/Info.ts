@@ -6,6 +6,7 @@ import type { Contact } from "@/model/Contact.ts";
 
 export type Info = {
   name: string;
+  price: string;
   gallery: BasePath & { images: string[] };
   description: string[];
   stats: StatItem[];
