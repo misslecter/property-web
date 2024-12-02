@@ -5,15 +5,20 @@ import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import ImageGallery from "@/components/ImageGallery.vue";
 import PropertyDescription from "@/components/PropertyDescription.vue";
 import PropertyStats from "@/components/PropertyStats.vue";
+import type { Info } from "@/model/Info.ts";
+import PropertyDownloads from "@/components/PropertyDownloads.vue";
 
-provide(GLOBAL_INFO_KEY, info as Info);
+provide(GLOBAL_INFO_KEY, info as unknown as Info);
 </script>
 
 <template>
   <div class="min-h-screen px-4 text-gray-600">
     <ImageGallery />
-    <div class="grid grid-cols-2">
-      <PropertyStats />
+    <div class="grid grid-cols-2 gap-8">
+      <div class="flex flex-col gap-8">
+        <PropertyStats />
+        <PropertyDownloads />
+      </div>
       <PropertyDescription />
     </div>
   </div>

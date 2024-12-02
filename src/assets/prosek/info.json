@@ -86,5 +86,18 @@
       "29.webp",
       "30.webp"
     ]
+  },
+  "downloads": {
+    "basePath": "downloads",
+    "files": [
+      {
+        "name": "Průkaz energetické náročnosti budovy",
+        "filename": "penb.pdf"
+      },
+      {
+        "name": "Plán bytu",
+        "filename": "plan-bytu.pdf"
+      }
+    ]
   }
 }
