@@ -25,7 +25,7 @@ const showPrevious = () => {
 </script>
 
 <template>
-  <div class="h-screen w-full py-4">
+  <div class="h-[calc(100vh-36px)] w-full py-4">
     <div class="relative h-full w-full overflow-hidden rounded-xl">
       <!-- Images -->
       <div

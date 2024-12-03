@@ -15,18 +15,21 @@ provide(GLOBAL_INFO_KEY, info as unknown as Info);
 </script>
 
 <template>
-  <div class="min-h-screen px-4 text-gray-600">
+  <div class="min-h-screen px-4 pb-16 text-gray-600">
     <ImageGallery />
-    <div class="grid grid-cols-2 gap-8">
-      <div class="flex flex-col gap-8">
-        <PropertyAddress />
-        <PropertyPrice />
-        <PropertyContact />
-        <PropertyDownloads />
-      </div>
-      <div class="flex flex-col">
-        <PropertyStats />
-        <PropertyDescription />
+    <PropertyAddress />
+
+    <div class="container mx-auto sm:px-6 lg:px-8">
+      <div class="flex gap-28 py-16">
+        <div class="sticky top-16 flex min-w-[400px] flex-col gap-16 self-start">
+          <PropertyPrice />
+          <PropertyContact />
+        </div>
+        <div class="flex flex-col">
+          <PropertyStats />
+          <PropertyDescription />
+          <PropertyDownloads />
+        </div>
       </div>
     </div>
   </div>
