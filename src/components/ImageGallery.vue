@@ -3,7 +3,6 @@ import { inject, ref } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/24/outline";
 
-const appBasePath = import.meta.env.VITE_BASE_PATH;
 const info = inject(GLOBAL_INFO_KEY);
 
 if (!info) {
@@ -35,7 +34,7 @@ const showPrevious = () => {
         <div v-for="(image, index) in images" :key="image" class="h-full w-full flex-shrink-0">
           <img
             class="h-full w-full object-cover"
-            :src="`${appBasePath}/public/${name}/${basePath}/${image}`"
+            :src="`${name}/${basePath}/${image}`"
             :alt="'Image ' + (index + 1)"
           />
         </div>

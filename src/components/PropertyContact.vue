@@ -3,7 +3,6 @@ import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline";
 
-const appBasePath = import.meta.env.VITE_BASE_PATH;
 const info = inject(GLOBAL_INFO_KEY);
 
 if (!info) {
@@ -17,7 +16,7 @@ if (!info) {
       <div class="flex w-full items-center justify-between space-x-6">
         <img
           class="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300"
-          :src="`${appBasePath}/public/${info.name}/${info.contact.photo}`"
+          :src="`${info.name}/${info.contact.photo}`"
           alt=""
         />
         <div class="flex-1 truncate">
