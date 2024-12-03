@@ -20,8 +20,8 @@ provide(GLOBAL_INFO_KEY, info as unknown as Info);
     <PropertyAddress />
 
     <div class="container mx-auto sm:px-6 lg:px-8">
-      <div class="flex gap-28 py-16">
-        <div class="sticky top-16 flex min-w-[400px] flex-col gap-16 self-start">
+      <div class="flex flex-col gap-16 py-16 lg:flex-row lg:gap-28">
+        <div class="top-16 flex w-full flex-col gap-16 self-start lg:sticky lg:min-w-[400px]">
           <PropertyPrice />
           <PropertyContact />
         </div>

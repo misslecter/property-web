@@ -10,7 +10,7 @@ if (!info) {
 </script>
 
 <template>
-  <div class="-mx-4 grid grid-cols-1 gap-px sm:-mx-6 sm:grid-cols-2 lg:-mx-8 lg:grid-cols-4">
+  <div class="-mx-4 grid grid-cols-2 gap-px sm:-mx-6 lg:grid-cols-4">
     <div v-for="stat in info.stats" :key="stat.name" class="px-4 py-6 sm:px-6 lg:px-8">
       <p class="mb-2 flex items-baseline gap-x-2">
         <span class="text-4xl font-semibold tracking-tight">{{ stat.value }}</span>
