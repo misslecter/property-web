@@ -33,7 +33,7 @@ const imageIcon: VNode = h("img", {
         </div>
         <div class="flex flex-1 flex-col items-center justify-center gap-20">
           <div
-            class="font-headings animate-fadeIn pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[8rem]"
+            class="font-headings animate-fadeIn pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[9rem]"
           >
             Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
           </div>
