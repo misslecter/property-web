@@ -17,12 +17,10 @@ const autoplayInterval = ref<number>(0);
 
 const showNext = () => {
   currentIndex.value = (currentIndex.value + 1) % images.length;
-  stopAutoplay();
 };
 
 const showPrevious = () => {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
-  stopAutoplay();
 };
 
 const autoplay = () => {
@@ -55,13 +53,23 @@ autoplay();
 
       <!-- Navigation Buttons -->
       <button
-        @click="showPrevious"
+        @click="
+          () => {
+            showPrevious();
+            stopAutoplay();
+          }
+        "
         class="bg-primary absolute left-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
         <ArrowLongLeftIcon class="h-10 w-10 text-black" />
       </button>
       <button
-        @click="showNext"
+        @click="
+          () => {
+            showNext();
+            stopAutoplay();
+          }
+        "
         class="bg-primary absolute right-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
         <ArrowLongRightIcon class="h-10 w-10 text-black" />

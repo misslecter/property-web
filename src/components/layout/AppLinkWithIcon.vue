@@ -7,10 +7,10 @@ import {
   type VNodeProps,
 } from "vue";
 
-// Define the type of props
-const props = defineProps<{
+defineProps<{
   to: string;
   title: string;
+  size?: "sm" | "md";
   icon: FunctionalComponent<HTMLAttributes & VNodeProps> | VNode;
   download?: string;
   target?: string;
@@ -18,14 +18,15 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex gap-2 align-middle text-white opacity-50 hover:opacity-80">
+  <div class="flex gap-2 align-middle text-white opacity-70 hover:opacity-80">
     <component :is="icon" class="w-4" />
     <a
-      :href="props.to"
-      :download="props.download"
+      :href="to"
+      :download="download"
       :target="target"
-      class="text-center text-xs sm:text-sm"
-      >{{ props.title }}</a
+      :class="{ 'sm:text-md': size === 'md', 'sm:text-sm': !size || size === 'sm' }"
+      class="xs:text-xs text-center"
+      >{{ title }}</a
     >
   </div>
 </template>

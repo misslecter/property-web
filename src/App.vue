@@ -24,7 +24,7 @@ const imageIcon: VNode = h("img", {
 </script>
 
 <template>
-  <div id="top" class="min-h-screen bg-black pb-[160px] text-gray-300">
+  <div id="top" class="min-h-screen bg-black pb-[140px] text-gray-300">
     <AppContainer>
       <div class="flex flex-col pb-[4rem]">
         <div class="flex flex-col items-center justify-between gap-4 py-4 lg:flex-row">
@@ -40,14 +40,14 @@ const imageIcon: VNode = h("img", {
 
           <AppBadges />
 
-          <a href="#gallery" class="animate-fadeInDelayed3 opacity-0 hover:opacity-70">
+          <a href="#gallery" class="animate-fadeInDelayed3 mt-8 opacity-0 hover:opacity-70">
             <ArrowDownIcon class="w-10 animate-bounce" />
           </a>
         </div>
       </div>
     </AppContainer>
 
-    <div id="gallery">
+    <div id="gallery" class="animate-fadeInDelayed3 opacity-0">
       <ImageGallery />
     </div>
 
