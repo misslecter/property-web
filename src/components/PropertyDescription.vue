@@ -11,7 +11,7 @@ if (!info) {
 
 <template>
   <div class="py-8">
-    <p v-for="(part, index) of info.description" :key="index" class="text-gr my-4 leading-loose">
+    <p v-for="(part, index) of info.description" :key="index" class="my-4 leading-loose">
       {{ part }}
     </p>
   </div>

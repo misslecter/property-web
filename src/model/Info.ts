@@ -13,4 +13,5 @@ export type Info = {
   downloads: BasePath & { files: DownloadFile[] };
   address: Address;
   contact: Contact;
+  badges: { title: string; download: BasePath & DownloadFile }[];
 };

@@ -2,7 +2,8 @@
   "name": "prosek",
   "price": "Cena na vyžádání",
   "address": {
-    "value": "Nad Kundratkou, Praha - Prosek"
+    "value": "Nad Kundratkou, Praha - Prosek",
+    "mapLink": "https://maps.app.goo.gl/PiJeeK6m9nTcWy6Z6"
   },
   "contact": {
     "name": "Ing. Tomáš Kouřim",
@@ -107,5 +108,23 @@
         "filename": "plan-bytu.pdf"
       }
     ]
-  }
+  },
+  "badges": [
+    {
+      "title": "Dům, ve kterém máte chuť bydlet",
+      "download": {
+        "name": "Časopis Nové bydlení 2015",
+        "basePath": "downloads",
+        "filename": "casopis-nove-bydleni.pdf"
+      }
+    },
+    {
+      "title": "Nadstandardní bydlení",
+      "download": {
+        "name": "Prospekt",
+        "basePath": "downloads",
+        "filename": "prospekt.pdf"
+      }
+    }
+  ]
 }
