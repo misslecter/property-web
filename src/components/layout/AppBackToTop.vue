@@ -29,10 +29,10 @@ onBeforeUnmount(() => {
   >
     <a
       href="#top"
-      class="bg-primary flex items-center gap-4 border border-black p-4 text-lg font-bold text-black hover:scale-105"
+      class="bg-primary flex items-center gap-2 border border-black px-2 py-1 font-bold text-black hover:scale-105 md:gap-4 md:p-4 md:text-lg"
     >
       Nahoru
-      <ArrowUpIcon class="w-[1.6rem]" />
+      <ArrowUpIcon class="w-4 md:w-[1.6rem]" />
     </a>
   </div>
 </template>

@@ -20,11 +20,11 @@ if (!info) {
           :src="`${info.name}/${info.contact.photo}`"
           alt=""
         />
-        <div class="flex-1 truncate">
+        <div class="flex-1">
           <h3 class="text-xl font-bold text-white">
             {{ info.contact.name }}
           </h3>
-          <p class="mt-1 truncate text-white opacity-70">{{ info.contact.title }}</p>
+          <p class="mt-1 text-white opacity-70">{{ info.contact.title }}</p>
         </div>
       </div>
     </div>

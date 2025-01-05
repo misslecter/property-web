@@ -25,7 +25,7 @@ defineProps<{
       :download="download"
       :target="target"
       :class="{ 'sm:text-md': size === 'md', 'sm:text-sm': !size || size === 'sm' }"
-      class="xs:text-xs text-center"
+      class="xs:text-xs truncate text-center"
       >{{ title }}</a
     >
   </div>
