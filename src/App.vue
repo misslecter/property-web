@@ -24,16 +24,16 @@ const imageIcon: VNode = h("img", {
 </script>
 
 <template>
-  <div id="top" class="min-h-screen bg-black text-gray-300">
+  <div id="top" class="min-h-screen bg-black pb-[160px] text-gray-300">
     <AppContainer>
       <div class="flex flex-col pb-[4rem]">
-        <div class="flex items-center justify-between py-4">
+        <div class="flex flex-col items-center justify-between gap-4 py-4 lg:flex-row">
           <PropertyAddress />
           <AppLinkWithIcon title="3D prohlídka" to="#3d" :icon="imageIcon" />
         </div>
         <div class="flex flex-1 flex-col items-center justify-center gap-20">
           <div
-            class="font-headings pt-[4rem] text-center text-[8rem] font-thin leading-[8rem] text-white"
+            class="font-headings pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[8rem]"
           >
             Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
           </div>
@@ -69,7 +69,7 @@ const imageIcon: VNode = h("img", {
       <iframe
         src="https://my.matterport.com/show/?m=VdxdAxDqy1g"
         width="100%"
-        class="lg:h-screen"
+        class="h-[300px] lg:h-screen"
         title="Example Website"
       >
       </iframe>

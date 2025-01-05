@@ -20,8 +20,12 @@ const props = defineProps<{
 <template>
   <div class="flex gap-2 align-middle text-white opacity-50 hover:opacity-80">
     <component :is="icon" class="w-4" />
-    <a :href="props.to" :download="props.download" :target="target" class="text-sm">{{
-      props.title
-    }}</a>
+    <a
+      :href="props.to"
+      :download="props.download"
+      :target="target"
+      class="text-center text-xs sm:text-sm"
+      >{{ props.title }}</a
+    >
   </div>
 </template>
