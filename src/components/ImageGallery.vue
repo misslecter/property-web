@@ -13,17 +13,24 @@ const { name, gallery } = info;
 const { images, basePath } = gallery;
 
 const currentIndex = ref<number>(0);
+const autoplayInterval = ref<number>(0);
 
 const showNext = () => {
   currentIndex.value = (currentIndex.value + 1) % images.length;
+  stopAutoplay();
 };
 
 const showPrevious = () => {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+  stopAutoplay();
 };
 
 const autoplay = () => {
-  setInterval(showNext, 3000);
+  autoplayInterval.value = setInterval(showNext, 3000);
+};
+
+const stopAutoplay = () => {
+  clearInterval(autoplayInterval.value);
 };
 
 autoplay();

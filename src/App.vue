@@ -14,6 +14,7 @@ import AppContainer from "@/components/layout/AppContainer.vue";
 import AppBadges from "@/components/layout/AppBadges.vue";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { ArrowDownIcon } from "@heroicons/vue/24/outline";
+import AppBackToTop from "@/components/layout/AppBackToTop.vue";
 
 provide(GLOBAL_INFO_KEY, info as unknown as Info);
 
@@ -23,7 +24,7 @@ const imageIcon: VNode = h("img", {
 </script>
 
 <template>
-  <div class="min-h-screen bg-black text-gray-300">
+  <div id="top" class="min-h-screen bg-black text-gray-300">
     <AppContainer>
       <div class="flex flex-col pb-[4rem]">
         <div class="flex items-center justify-between py-4">
@@ -74,4 +75,6 @@ const imageIcon: VNode = h("img", {
       </iframe>
     </div>
   </div>
+
+  <AppBackToTop />
 </template>

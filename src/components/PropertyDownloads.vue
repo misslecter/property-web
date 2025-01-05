@@ -11,7 +11,7 @@ if (!info) {
 </script>
 
 <template>
-  <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
+  <ul role="list" class="divide-y divide-gray-700 rounded-md border border-gray-700">
     <li
       v-for="file of info.downloads.files"
       :key="file.filename"
@@ -38,7 +38,7 @@ if (!info) {
       </div>
       <div class="ml-4 shrink-0">
         <a
-          class="font-medium text-indigo-600 hover:text-indigo-500"
+          class="text-primary font-medium opacity-70 hover:opacity-100"
           :href="`${appBasePath}/public/${info.name}/${info.downloads.basePath}/${file.filename}`"
           :download="file.filename"
           >Stáhnout</a
