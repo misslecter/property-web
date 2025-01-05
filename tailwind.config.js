@@ -15,6 +15,22 @@ export default {
       colors: {
         primary: "rgb(255 213 133)",
       },
+      animation: {
+        fadeIn: "fadeIn 1.5s ease-in-out forwards",
+        fadeInDelayed: "fadeIn 1.5s ease-in-out forwards 0.5s",
+        fadeInDelayed2: "fadeIn 1.5s ease-in-out forwards 1s",
+        fadeInDelayed3: "fadeIn 1.5s ease-in-out forwards 1.5s",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
+      },
     },
   },
   plugins: [],

@@ -56,15 +56,15 @@ autoplay();
       <!-- Navigation Buttons -->
       <button
         @click="showPrevious"
-        class="absolute left-4 top-1/2 -translate-y-1/2 transform drop-shadow-3xl hover:opacity-80"
+        class="bg-primary absolute left-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
-        <ArrowLongLeftIcon class="h-10 w-10 text-white" />
+        <ArrowLongLeftIcon class="h-10 w-10 text-black" />
       </button>
       <button
         @click="showNext"
-        class="absolute right-4 top-1/2 -translate-y-1/2 transform drop-shadow-3xl hover:opacity-80"
+        class="bg-primary absolute right-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
-        <ArrowLongRightIcon class="h-10 w-10 text-white" />
+        <ArrowLongRightIcon class="h-10 w-10 text-black" />
       </button>
     </div>
   </div>

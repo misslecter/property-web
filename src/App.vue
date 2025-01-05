@@ -33,15 +33,15 @@ const imageIcon: VNode = h("img", {
         </div>
         <div class="flex flex-1 flex-col items-center justify-center gap-20">
           <div
-            class="font-headings pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[8rem]"
+            class="font-headings animate-fadeIn pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[8rem]"
           >
             Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
           </div>
 
           <AppBadges />
 
-          <a href="#gallery">
-            <ArrowDownIcon class="w-10" />
+          <a href="#gallery" class="animate-fadeInDelayed3 opacity-0 hover:opacity-70">
+            <ArrowDownIcon class="w-10 animate-bounce" />
           </a>
         </div>
       </div>

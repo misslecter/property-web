@@ -17,7 +17,8 @@ if (!info) {
     <div
       v-for="(badge, index) in info.badges"
       :key="index"
-      class="flex flex-1 items-center justify-center gap-4 md:gap-8"
+      :class="{ 'animate-fadeInDelayed': index === 0, 'animate-fadeInDelayed2': index === 1 }"
+      class="flex flex-1 items-center justify-center gap-4 opacity-0 md:gap-8"
     >
       <img src="../../assets/img/leaf-left.png" alt="Leaf left" class="w-[40px]" />
       <div class="flex flex-1 flex-col items-center gap-2">

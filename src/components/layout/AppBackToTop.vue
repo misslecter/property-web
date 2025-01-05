@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
   >
     <a
       href="#top"
-      class="bg-primary flex items-center gap-4 border border-black p-4 text-lg font-bold text-black"
+      class="bg-primary flex items-center gap-4 border border-black p-4 text-lg font-bold text-black hover:scale-105"
     >
       Nahoru
       <ArrowUpIcon class="w-[1.6rem]" />
