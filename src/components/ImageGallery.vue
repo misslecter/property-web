@@ -61,7 +61,7 @@ autoplay();
         "
         class="bg-primary absolute left-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
-        <ArrowLongLeftIcon class="h-10 w-10 text-black" />
+        <ArrowLongLeftIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>
       <button
         @click="
@@ -72,7 +72,7 @@ autoplay();
         "
         class="bg-primary absolute right-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
       >
-        <ArrowLongRightIcon class="h-10 w-10 text-black" />
+        <ArrowLongRightIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>
     </div>
   </div>
