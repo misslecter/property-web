@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, ref } from "vue";
+import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { MapPinIcon } from "@heroicons/vue/24/outline";

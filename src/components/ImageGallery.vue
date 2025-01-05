@@ -43,13 +43,13 @@ const showPrevious = () => {
       <!-- Navigation Buttons -->
       <button
         @click="showPrevious"
-        class="drop-shadow-3xl absolute left-4 top-1/2 -translate-y-1/2 transform hover:opacity-80"
+        class="absolute left-4 top-1/2 -translate-y-1/2 transform drop-shadow-3xl hover:opacity-80"
       >
         <ArrowLongLeftIcon class="h-10 w-10 text-white" />
       </button>
       <button
         @click="showNext"
-        class="drop-shadow-3xl absolute right-4 top-1/2 -translate-y-1/2 transform hover:opacity-80"
+        class="absolute right-4 top-1/2 -translate-y-1/2 transform drop-shadow-3xl hover:opacity-80"
       >
         <ArrowLongRightIcon class="h-10 w-10 text-white" />
       </button>

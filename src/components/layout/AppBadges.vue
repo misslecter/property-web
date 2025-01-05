@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
-import { ArrowDownTrayIcon, MapPinIcon } from "@heroicons/vue/24/outline";
+import { ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 
 const appBasePath = import.meta.env.VITE_BASE_PATH;
