@@ -13,15 +13,18 @@ if (!info) {
 </script>
 
 <template>
-  <div class="my-8 flex justify-center gap-12">
+  <div class="flex items-center justify-center gap-12">
     <div
       v-for="(badge, index) in info.badges"
       :key="index"
-      class="flex items-center justify-center gap-1"
+      class="flex flex-1 items-center justify-center gap-8"
     >
       <img src="../../assets/img/leaf-left.png" alt="Leaf left" class="w-[40px]" />
-      <div class="flex flex-col items-center gap-2">
-        <span class="text-lg font-bold italic">"{{ badge.title }}"</span>
+      <div class="flex flex-1 flex-col items-center gap-2">
+        <div
+          class="whitespace-nowrap text-center text-lg font-bold italic"
+          v-html="'&quot;' + badge.title + '&quot;'"
+        />
         <AppLinkWithIcon
           v-if="badge.download"
           :title="badge.download.name"

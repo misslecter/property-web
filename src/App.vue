@@ -13,6 +13,7 @@ import PropertyPrice from "@/components/PropertyPrice.vue";
 import AppContainer from "@/components/layout/AppContainer.vue";
 import AppBadges from "@/components/layout/AppBadges.vue";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 
 provide(GLOBAL_INFO_KEY, info as unknown as Info);
 
@@ -22,21 +23,32 @@ const imageIcon: VNode = h("img", {
 </script>
 
 <template>
-  <div class="min-h-screen scroll-smooth bg-black px-4 pb-16 text-gray-300">
+  <div class="min-h-screen bg-black text-gray-300">
     <AppContainer>
-      <div class="flex items-center justify-between py-4">
-        <PropertyAddress />
-        <AppLinkWithIcon title="3D prohlídka" to="#3d" :icon="imageIcon" />
-      </div>
+      <div class="flex flex-col pb-[4rem]">
+        <div class="flex items-center justify-between py-4">
+          <PropertyAddress />
+          <AppLinkWithIcon title="3D prohlídka" to="#3d" :icon="imageIcon" />
+        </div>
+        <div class="flex flex-1 flex-col items-center justify-center gap-20">
+          <div
+            class="font-headings pt-[4rem] text-center text-[8rem] font-thin leading-[8rem] text-white"
+          >
+            Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
+          </div>
 
-      <div class="font-headings text-center text-7xl font-thin text-white">
-        Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
-      </div>
+          <AppBadges />
 
-      <AppBadges />
+          <a href="#gallery">
+            <ArrowDownIcon class="w-10" />
+          </a>
+        </div>
+      </div>
     </AppContainer>
 
-    <ImageGallery />
+    <div id="gallery">
+      <ImageGallery />
+    </div>
 
     <AppContainer>
       <div class="flex flex-col gap-16 py-16 lg:flex-row lg:gap-28">
@@ -56,7 +68,7 @@ const imageIcon: VNode = h("img", {
       <iframe
         src="https://my.matterport.com/show/?m=VdxdAxDqy1g"
         width="100%"
-        class="lg:h-[600px]"
+        class="lg:h-screen"
         title="Example Website"
       >
       </iframe>

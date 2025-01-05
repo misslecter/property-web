@@ -21,11 +21,17 @@ const showNext = () => {
 const showPrevious = () => {
   currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
 };
+
+const autoplay = () => {
+  setInterval(showNext, 3000);
+};
+
+autoplay();
 </script>
 
 <template>
-  <div class="h-[300px] w-full py-4 lg:h-[calc(100vh-36px)]">
-    <div class="relative h-full w-full overflow-hidden rounded-xl">
+  <div class="h-[300px] w-full lg:h-screen">
+    <div class="relative h-full w-full overflow-hidden">
       <!-- Images -->
       <div
         class="flex h-full transition-transform duration-500"

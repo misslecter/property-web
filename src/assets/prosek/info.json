@@ -111,7 +111,7 @@
   },
   "badges": [
     {
-      "title": "Dům, ve kterém máte chuť bydlet",
+      "title": "Dům, ve kterém máte<br>chuť bydlet",
       "download": {
         "name": "Časopis Nové bydlení 2015",
         "basePath": "downloads",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "title": "Nadstandardní bydlení",
+      "title": "Viladům nad Kundratrkou:<br>nadstandardní bydlení",
       "download": {
         "name": "Prospekt",
         "basePath": "downloads",
