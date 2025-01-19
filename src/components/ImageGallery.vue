@@ -3,7 +3,7 @@ import { inject, ref } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/24/outline";
 
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
 
 if (!info) {
   throw new Error("Info not provided");
@@ -59,7 +59,7 @@ autoplay();
             stopAutoplay();
           }
         "
-        class="bg-primary absolute left-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
+        class="absolute left-4 top-1/2 -translate-y-1/2 transform border border-black bg-primary px-2 hover:scale-105"
       >
         <ArrowLongLeftIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>
@@ -70,7 +70,7 @@ autoplay();
             stopAutoplay();
           }
         "
-        class="bg-primary absolute right-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
+        class="absolute right-4 top-1/2 -translate-y-1/2 transform border border-black bg-primary px-2 hover:scale-105"
       >
         <ArrowLongRightIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>

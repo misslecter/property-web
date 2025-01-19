@@ -1,0 +1,129 @@
+{
+  "name": "prosek",
+  "price": "Price on request",
+  "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
+  "address": {
+    "value": "Nad Kundratkou, Praha - Prosek",
+    "mapLink": "https://maps.app.goo.gl/PiJeeK6m9nTcWy6Z6"
+  },
+  "contact": {
+    "name": "Ing. Tomáš Kouřim",
+    "title": "spolumajitel nemovitosti",
+    "email": "kourim.tomas@seznam.cz",
+    "phone": "+420 723 927 536",
+    "photo": "tomas.webp"
+  },
+  "stats": [
+    {
+      "name": "dispozice",
+      "value": "4+kk"
+    },
+    {
+      "name": "užitná plocha",
+      "value": "173",
+      "unit": "m²"
+    },
+    {
+      "name": "terasa",
+      "value": "20",
+      "unit": "m²"
+    },
+    {
+      "name": "balkony",
+      "value": "2"
+    },
+    {
+      "name": "koupelny",
+      "value": "3"
+    },
+    {
+      "name": "sklep",
+      "value": "3",
+      "unit": "m²"
+    },
+    {
+      "name": "garáže",
+      "value": "2"
+    },
+    {
+      "name": "NP ze 4",
+      "value": "3."
+    }
+  ],
+  "description": [
+    "Nabízím k prodeji luxusní byt 4+kk o celkové ploše 173 m2 (plus 20.5m2 terasy a 2.5m2 sklepní kóje) s dvěma parkovacími místy v kryté garáži v prémiovém bytovém domě projektu Střížkovské výhledy. Byt se nachází ve druhém patře (3.NP ze 4) s výtahem a je bezbariérově přístupný.",
+    "Centrální část bytu tvoří velkorysý obývací pokoj s plně vybaveným kuchyňským koutem (59m2) s vestavnými spotřebiči značky Miele a Liebherr (lednice s mrazákem, vinotéka, myčka, digestoř, trouba, mikrovlnná trouba) a dostatkem úložných prostor. Dvě ložnice na západní straně bytu (16.2m2 a 15.5m2) jsou propojeny s prostornými šatnami (7.6m2 a 7.1m2), a ke každé patří i vlastní koupelna (4.3m2 a 4.2m2) s toaletou, jedna se sprchovým koutem, druhá s vanou. Ložnice ve východní části bytu (12.2m2) má k dispozici rovněž vlastní koupelnu s toaletou a sprchovým koutem (3.4m2). V bytě je dále komora/šatna (4.8m2) a místnost ve stavební dokumentaci označena jako “domácí práce” (6.8m2) -  prostor pro pračku a sušičku, je zde i linka s dřezem. K bytu také patří 2 lodžie (á 3m2) a jižně orientovaná terasa (14.5m2) s výhledem na celou Prahu.",
+    "Celý dům i byt jsou ve špičkovém provedení. Ač se jedná o novostavbu z roku 2015, tak jsou v bytě vysoké stropy (2.7m) a jeho architektura navazuje na prvorepublikový kubismus. V bytě je podlahové vytápění (obývací část a koupelny), centrální klimatizace a venkovní žaluzie - vše ovládané automaticky systémem chytré domácnosti Kobra. Byt je též vybaven zabezpečovacím zařízením s napojením na pult centrální ochrany. Veškeré zařizovací předměty jsou v top standardu (značky Laufen, Hansgrohe, Tece, Riho, Hüppe). V obývací části lze využít stropního LED osvětlení, které lze ovladačem libovolně přizpůsobovat. V bytovém domě je pouze 16 bytových jednotek a celý projekt je opravdu nadstandardní, o čemž svědčí třeba i to, že v jednom z bytů bydlel během rekonstrukce své vily na Bertramce i Karel Gott.",
+    "Užitná plocha bytu je 173.36m2, obytná plocha je 161.35m2 a celková plocha (včetně teras) je 194.02m2. K bytu dále patří sklep (2.5m2) a 2 parkovací stání v garáží, z nichž jedno je prodloužené. V domě jsou též 2 kočárkárny/kolárny.",
+    "Dům se nachází v bezprostřední blízkosti zeleně přímo u přírodní památky Prosecké skály a vyhlídky Emy Destinové a vyhlídky Prosecké skály. Byty ve vyšších patrech (tedy i tento) díky poloze nad skalním zlomem nabízí fantastické výhledy na celou Prahu, včetně například Pražského hradu.",
+    "V rozumné dojezdové vzdálenosti se nachází OC Letňany, Globus Čakovice, OBI, Kaufland, Aquacentrum Šutka, Nemocnice Bulovka a další.",
+    "Mám k dispozici znalecký posudek k bytu, který zájemcům mohu poskytnout. Stejně tak mohu poskytnout další informace k bytu i celému projektu, stejně jako další fotky.",
+    "Byt je připravený k okamžitému nastěhování bez nutnosti jakýchkoliv oprav či zásahů. Jedná se o prodej přímo od majitele, bez provize realitní kanceláři, které tímto žádám, aby mě nekontaktovaly."
+  ],
+  "gallery": {
+    "basePath": "gallery",
+    "images": [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg",
+      "8.jpg",
+      "9.jpg",
+      "10.jpg",
+      "11.jpg",
+      "12.jpg",
+      "13.jpg",
+      "14.jpg",
+      "15.jpg",
+      "16.jpg",
+      "17.jpg",
+      "18.jpg",
+      "19.jpg",
+      "20.jpg",
+      "21.jpg",
+      "22.jpg",
+      "23.jpg",
+      "24.jpg",
+      "25.jpg",
+      "26.jpg",
+      "27.jpg",
+      "28.jpg",
+      "29.jpg",
+      "30.jpg"
+    ]
+  },
+  "downloads": {
+    "basePath": "downloads",
+    "files": [
+      {
+        "name": "Průkaz energetické náročnosti budovy",
+        "filename": "penb.pdf"
+      },
+      {
+        "name": "Plán bytu",
+        "filename": "plan-bytu.pdf"
+      }
+    ]
+  },
+  "badges": [
+    {
+      "title": "Dům, ve kterém máte<br>chuť bydlet",
+      "download": {
+        "name": "Časopis Nové bydlení",
+        "basePath": "downloads",
+        "filename": "casopis-nove-bydleni.pdf"
+      }
+    },
+    {
+      "title": "Viladům nad Kundratrkou:<br>nadstandardní bydlení",
+      "download": {
+        "name": "Prospekt",
+        "basePath": "downloads",
+        "filename": "prospekt.pdf"
+      }
+    }
+  ]
+}

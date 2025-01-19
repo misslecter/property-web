@@ -2,10 +2,12 @@
 import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
-import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import AppLink from "@/components/layout/AppLink.vue";
 
 const appBasePath = import.meta.env.VITE_BASE_PATH;
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
+
+console.log("info", info);
 
 if (!info) {
   throw new Error("Info not provided");
@@ -26,7 +28,7 @@ if (!info) {
           class="whitespace-nowrap text-center font-bold italic md:text-lg"
           v-html="'&quot;' + badge.title + '&quot;'"
         />
-        <AppLinkWithIcon
+        <AppLink
           v-if="badge.download"
           :title="badge.download.name"
           :to="`${appBasePath}/${info.name}/${badge.download.basePath}/${badge.download.filename}`"

@@ -8,10 +8,10 @@ import {
 } from "vue";
 
 defineProps<{
-  to: string;
+  to?: string;
   title: string;
   size?: "sm" | "md";
-  icon: FunctionalComponent<HTMLAttributes & VNodeProps> | VNode;
+  icon?: FunctionalComponent<HTMLAttributes & VNodeProps> | VNode;
   download?: string;
   target?: string;
 }>();
@@ -19,7 +19,7 @@ defineProps<{
 
 <template>
   <div class="flex gap-2 align-middle text-white opacity-70 hover:opacity-80">
-    <component :is="icon" class="w-4" />
+    <component v-if="icon" :is="icon" class="w-4" />
     <a
       :href="to"
       :download="download"

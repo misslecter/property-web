@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import info from "./assets/prosek/info.json";
-import { h, provide, type VNode } from "vue";
+import infoCs from "./assets/prosek/infoCs.json";
+import infoEn from "./assets/prosek/infoEn.json";
+import { h, provide, type Ref, ref, type VNode } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import ImageGallery from "@/components/ImageGallery.vue";
 import PropertyDescription from "@/components/PropertyDescription.vue";
@@ -12,16 +13,28 @@ import PropertyContact from "@/components/PropertyContact.vue";
 import PropertyPrice from "@/components/PropertyPrice.vue";
 import AppContainer from "@/components/layout/AppContainer.vue";
 import AppBadges from "@/components/layout/AppBadges.vue";
-import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import AppLink from "@/components/layout/AppLink.vue";
 import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 import AppBackToTop from "@/components/layout/AppBackToTop.vue";
 import Property3d from "@/components/PropertyVirtualTour.vue";
 
-provide(GLOBAL_INFO_KEY, info as unknown as Info);
-
 const imageIcon: VNode = h("img", {
   src: "/360.svg",
 });
+
+enum Language {
+  Cs = "cs",
+  En = "en",
+}
+
+const localizedInfo = ref(infoCs);
+const setLanguage = (language: Language) => {
+  localStorage.setItem("language", language);
+  localizedInfo.value = language === Language.En ? infoEn : infoCs;
+  console.log(localizedInfo.value);
+};
+
+provide(GLOBAL_INFO_KEY, localizedInfo as unknown as Ref<Info>);
 </script>
 
 <template>
@@ -29,8 +42,22 @@ const imageIcon: VNode = h("img", {
     <AppContainer>
       <div class="flex flex-col pb-[4rem]">
         <div class="flex flex-col items-center justify-between gap-4 py-4 lg:flex-row">
-          <PropertyAddress />
-          <AppLinkWithIcon title="3D prohlídka" to="#3d" :icon="imageIcon" />
+          <div class="flex flex-1">
+            <PropertyAddress />
+          </div>
+          <div class="flex flex-1 items-center justify-center gap-4">
+            <a
+              :href="'#' + lang"
+              @click="() => setLanguage(lang)"
+              v-for="lang in Object.values(Language)"
+              class="xs:text-xs sm:text-sm"
+            >
+              {{ lang }}
+            </a>
+          </div>
+          <div class="flex flex-1 justify-end">
+            <AppLink title="3D prohlídka" to="#3d" :icon="imageIcon" />
+          </div>
         </div>
         <div class="flex flex-1 flex-col items-center justify-center gap-20">
           <div

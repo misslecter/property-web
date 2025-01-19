@@ -2,9 +2,9 @@
 import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline";
-import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import AppLink from "@/components/layout/AppLink.vue";
 
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
 
 if (!info) {
   throw new Error("Info not provided");
@@ -29,13 +29,13 @@ if (!info) {
       </div>
     </div>
     <div class="flex flex-col gap-4 px-4 py-5 sm:p-6">
-      <AppLinkWithIcon
+      <AppLink
         :title="info.contact.email"
         :to="`mailto:${info.contact.email}`"
         :icon="EnvelopeIcon"
         size="md"
       />
-      <AppLinkWithIcon
+      <AppLink
         :title="info.contact.phone"
         :to="`tel:${info.contact.phone}`"
         :icon="PhoneIcon"

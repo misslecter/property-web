@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
-import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import AppLink from "@/components/layout/AppLink.vue";
 import { MapPinIcon } from "@heroicons/vue/24/outline";
 
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
 
 if (!info) {
   throw new Error("Info not provided");
@@ -12,7 +12,7 @@ if (!info) {
 </script>
 
 <template>
-  <AppLinkWithIcon
+  <AppLink
     :title="info.address.value"
     :to="info.address.mapLink"
     :icon="MapPinIcon"

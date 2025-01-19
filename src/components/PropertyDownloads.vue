@@ -3,7 +3,7 @@ import { inject } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 
 const appBasePath = import.meta.env.VITE_BASE_PATH;
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
 
 if (!info) {
   throw new Error("Info not provided");

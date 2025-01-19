@@ -4,7 +4,7 @@ import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import { PlayCircleIcon } from "@heroicons/vue/24/outline";
 import AppButtonWithIcon from "@/components/layout/AppButtonWithIcon.vue";
 
-const info = inject(GLOBAL_INFO_KEY);
+const info = inject(GLOBAL_INFO_KEY)?.value;
 
 if (!info) {
   throw new Error("Info not provided");
