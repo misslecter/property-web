@@ -38,8 +38,8 @@ if (!info) {
       </div>
       <div class="ml-4 shrink-0">
         <a
-          class="text-primary font-medium opacity-80 hover:opacity-100"
-          :href="`${appBasePath}/public/${info.name}/${info.downloads.basePath}/${file.filename}`"
+          class="font-medium text-primary opacity-80 hover:opacity-100"
+          :href="`${appBasePath}/${info.name}/${info.downloads.basePath}/${file.filename}`"
           :download="file.filename"
           >Stáhnout</a
         >

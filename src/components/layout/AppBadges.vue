@@ -29,7 +29,7 @@ if (!info) {
         <AppLinkWithIcon
           v-if="badge.download"
           :title="badge.download.name"
-          :to="`${appBasePath}/public/${info.name}/${badge.download.basePath}/${badge.download.filename}`"
+          :to="`${appBasePath}/${info.name}/${badge.download.basePath}/${badge.download.filename}`"
           :icon="ArrowDownTrayIcon"
           :download="badge.download.filename"
         />

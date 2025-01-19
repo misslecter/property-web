@@ -1,6 +1,7 @@
 {
   "name": "prosek",
   "price": "Cena na vyžádání",
+  "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
   "address": {
     "value": "Nad Kundratkou, Praha - Prosek",
     "mapLink": "https://maps.app.goo.gl/PiJeeK6m9nTcWy6Z6"
@@ -23,19 +24,17 @@
       "unit": "m²"
     },
     {
-      "name": "balkon",
-      "value": "3",
-      "unit": "m²"
-    },
-    {
-      "name": "lodžie",
-      "value": "3",
-      "unit": "m²"
-    },
-    {
       "name": "terasa",
-      "value": "14",
+      "value": "20",
       "unit": "m²"
+    },
+    {
+      "name": "balkony",
+      "value": "2"
+    },
+    {
+      "name": "koupelny",
+      "value": "3"
     },
     {
       "name": "sklep",

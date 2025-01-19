@@ -31,6 +31,9 @@ export default {
           },
         },
       },
+      backgroundImage: {
+        "radial-black": "radial-gradient(circle, black, transparent)",
+      },
     },
   },
   plugins: [],

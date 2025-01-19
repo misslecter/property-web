@@ -15,6 +15,7 @@ import AppBadges from "@/components/layout/AppBadges.vue";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 import AppBackToTop from "@/components/layout/AppBackToTop.vue";
+import Property3d from "@/components/PropertyVirtualTour.vue";
 
 provide(GLOBAL_INFO_KEY, info as unknown as Info);
 
@@ -33,14 +34,14 @@ const imageIcon: VNode = h("img", {
         </div>
         <div class="flex flex-1 flex-col items-center justify-center gap-20">
           <div
-            class="font-headings animate-fadeIn pt-[4rem] text-center text-6xl font-thin text-white lg:text-[8rem] lg:leading-[9rem]"
+            class="animate-fadeIn pt-[4rem] text-center font-headings text-6xl font-thin text-white lg:text-[8rem] lg:leading-[9rem]"
           >
-            Bydlete<br />v <span class="text-primary font-normal">ultimátním</span> luxusu
+            Bydlete<br />v <span class="font-normal text-primary">dokonalém</span> luxusu
           </div>
 
           <AppBadges />
 
-          <a href="#gallery" class="animate-fadeInDelayed3 mt-8 opacity-0 hover:opacity-70">
+          <a href="#gallery" class="mt-8 animate-fadeInDelayed3 opacity-0 hover:opacity-70">
             <ArrowDownIcon class="w-10 animate-bounce" />
           </a>
         </div>
@@ -66,13 +67,7 @@ const imageIcon: VNode = h("img", {
     </AppContainer>
 
     <div id="3d">
-      <iframe
-        src="https://my.matterport.com/show/?m=VdxdAxDqy1g"
-        width="100%"
-        class="h-[300px] lg:h-screen"
-        title="Example Website"
-      >
-      </iframe>
+      <Property3d />
     </div>
   </div>
 
