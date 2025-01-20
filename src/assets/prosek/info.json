@@ -8,8 +8,8 @@
   },
   "contact": {
     "name": "Ing. Tomáš Kouřim",
-    "title": "spolumajitel nemovitosti",
-    "email": "kourim.tomas@seznam.cz",
+    "title": "majitel nemovitosti",
+    "email": "tomas.kourim@terribilis.cz",
     "phone": "+420 723 927 536",
     "photo": "tomas.webp"
   },
@@ -24,13 +24,13 @@
       "unit": "m²"
     },
     {
-      "name": "terasa",
+      "name": "terasy",
       "value": "20",
       "unit": "m²"
     },
     {
       "name": "balkony",
-      "value": "2"
+      "value": "3"
     },
     {
       "name": "koupelny",
@@ -42,7 +42,7 @@
       "unit": "m²"
     },
     {
-      "name": "garáže",
+      "name": "gar. stání",
       "value": "2"
     },
     {
