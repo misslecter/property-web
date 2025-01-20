@@ -99,6 +99,10 @@
     "basePath": "downloads",
     "files": [
       {
+        "name": "Karta bytu",
+        "filename": "karta-bytu.pdf"
+      },
+      {
         "name": "Průkaz energetické náročnosti budovy",
         "filename": "penb.pdf"
       },
