@@ -10,6 +10,7 @@ export type Info = {
   virtualTourLink: string;
   gallery: BasePath & { images: string[] };
   description: string[];
+  descriptionEn?: string[];
   stats: StatItem[];
   downloads: BasePath & { files: DownloadFile[] };
   address: Address;

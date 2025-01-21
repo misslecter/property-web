@@ -10,5 +10,8 @@ if (!info) {
 </script>
 
 <template>
-  <p class="text-primary text-4xl font-extrabold">{{ info.price }}</p>
+  <div class="flex flex-col gap-2">
+    <p class="text-gray-400">Cena</p>
+    <p class="text-4xl font-extrabold text-primary">{{ info.price }}</p>
+  </div>
 </template>
