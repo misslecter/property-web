@@ -10,19 +10,30 @@ if (!info) {
 </script>
 
 <template>
-  <div class="py-8">
+  <div>
     <a
       v-if="info.descriptionEn?.length"
       href="#english"
-      class="italic text-primary opacity-80 transition-opacity hover:opacity-90"
-      >Go to the English description</a
+      class="block text-center text-primary text-xl italic opacity-80 transition-opacity hover:opacity-90"
     >
-    <p v-for="(part, index) of info.description" :key="index" class="my-4 leading-loose">
+      English description below
+    </a>
+
+    <p
+      v-for="(part, index) of info.description"
+      :key="index"
+      class="my-4 leading-loose text-center text-xl"
+    >
       {{ part }}
     </p>
+
     <div v-if="info.descriptionEn?.length" id="english" class="pt-4">
       <hr class="opacity-40" />
-      <p v-for="(part, index) of info.descriptionEn" :key="index" class="mb-4 mt-8 leading-loose">
+      <p
+        v-for="(part, index) of info.descriptionEn"
+        :key="index"
+        class="mb-4 mt-8 leading-loose text-center text-xl"
+      >
         {{ part }}
       </p>
     </div>
