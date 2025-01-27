@@ -15,7 +15,7 @@ if (!info) {
       v-if="info.descriptionEn?.length"
       href="#english"
       class="italic text-primary opacity-80 transition-opacity hover:opacity-90"
-      >English description below</a
+      >Go to the English description</a
     >
     <p v-for="(part, index) of info.description" :key="index" class="my-4 leading-loose">
       {{ part }}
