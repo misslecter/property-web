@@ -111,6 +111,14 @@
       {
         "name": "Karta bytu",
         "filename": "karta-bytu.pdf"
+      },
+      {
+        "name": "Průkaz energetické náročnosti budovy",
+        "filename": "penb.pdf"
+      },
+      {
+        "name": "Plán bytu",
+        "filename": "plan-bytu.pdf"
       }
     ]
   },
