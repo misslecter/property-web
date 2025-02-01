@@ -11,7 +11,7 @@
     "czech": "Czech",
     "english": "English"
   },
-  "price": "28 790 000 Kč",
+  "price": "28,790,000 CZK",
   "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
   "address": {
     "value": "Nad Kundratkou, Praha - Prosek",
@@ -19,46 +19,46 @@
   },
   "contact": {
     "name": "Ing. Tomáš Kouřim",
-    "title": "majitel nemovitosti",
+    "title": "Property Owner",
     "email": "tomas.kourim@terribilis.cz",
     "phone": "+420 723 927 536",
     "photo": "tomas.webp"
   },
   "stats": [
     {
-      "name": "dispozice",
+      "name": "layout",
       "value": "4+kk"
     },
     {
-      "name": "celková plocha",
+      "name": "total area",
       "value": "194",
       "unit": "m²"
     },
     {
-      "name": "terasy",
+      "name": "terraces",
       "value": "20",
       "unit": "m²"
     },
     {
-      "name": "balkony",
+      "name": "balconies",
       "value": "3"
     },
     {
-      "name": "koupelny",
+      "name": "bathrooms",
       "value": "3"
     },
     {
-      "name": "sklep",
+      "name": "basement",
       "value": "3",
       "unit": "m²"
     },
     {
-      "name": "gar. stání",
+      "name": "garage parking lots",
       "value": "2"
     },
     {
-      "name": "NP ze 4",
-      "value": "3."
+      "name": "floor (out of 4)",
+      "value": "3rd"
     }
   ],
   "description": [
@@ -110,32 +110,32 @@
     "basePath": "downloads",
     "files": [
       {
-        "name": "Karta bytu",
+        "name": "Apartment Datasheet",
         "filename": "karta-bytu.pdf"
       },
       {
-        "name": "Průkaz energetické náročnosti budovy",
+        "name": "Energy Performance Certificate",
         "filename": "penb.pdf"
       },
       {
-        "name": "Plán bytu",
+        "name": "Apartment Floor Plan",
         "filename": "plan-bytu.pdf"
       }
     ]
   },
   "badges": [
     {
-      "title": "Dům, ve kterém máte<br>chuť bydlet",
+      "title": "A house you want<br>to live in",
       "download": {
-        "name": "Časopis Nové bydlení",
+        "name": "Nové bydlení magazine",
         "basePath": "downloads",
         "filename": "casopis-nove-bydleni.pdf"
       }
     },
     {
-      "title": "Viladům nad Kundratrkou:<br>nadstandardní bydlení",
+      "title": "Villa house Nad Kundratrkou:<br>above-standard living",
       "download": {
-        "name": "Prospekt",
+        "name": "Brochure",
         "basePath": "downloads",
         "filename": "prospekt.pdf"
       }
