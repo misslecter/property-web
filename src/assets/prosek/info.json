@@ -12,6 +12,7 @@
     "english": "Anglicky"
   },
   "price": "28 790 000 Kč",
+  "priceLabel" : "Cena",
   "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
   "address": {
     "value": "Nad Kundratkou, Praha - Prosek",
