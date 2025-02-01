@@ -36,7 +36,7 @@ const imageIcon: VNode = h("img", {
           <div
             class="animate-fadeIn pt-[4rem] text-center font-headings text-6xl font-thin text-white lg:text-[8rem] lg:leading-[9rem]"
           >
-            Bydlete<br />v <span class="font-normal text-primary">dokonalém</span> luxusu
+            {{t('title.live')}}<br />{{t('title.in')}} <span class="font-normal text-primary">{{t('title.perfect')}}</span> {{t('title.luxury')}}
           </div>
 
           <AppBadges />
