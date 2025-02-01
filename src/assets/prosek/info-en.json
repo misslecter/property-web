@@ -1,15 +1,15 @@
 {
   "name": "prosek",
   "title": {
-    "live": "Bydlete",
-    "in": "v",
-    "perfect": "dokonalém",
-    "luxury": "luxusu"
+    "live": "Live",
+    "in": "in",
+    "perfect": "perfect",
+    "luxury": "luxury"
   },
-  "3dTour": "3D prohlídka",
+  "3dTour": "3D Tour",
   "language": {
-    "czech": "Česky",
-    "english": "Anglicky"
+    "czech": "Czech",
+    "english": "English"
   },
   "price": "28 790 000 Kč",
   "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
