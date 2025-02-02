@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { useI18n } from 'vue-i18n';
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { MapPinIcon } from "@heroicons/vue/24/outline";
 
-const info = inject(GLOBAL_INFO_KEY);
+// Get the `t` function from vue-i18n
+const { t } = useI18n();
 
-if (!info) {
-  throw new Error("Info not provided");
-}
+
 </script>
 
 <template>
   <AppLinkWithIcon
-    :title="info.address.value"
-    :to="info.address.mapLink"
+    :title="t('address.value')"
+    :to="t('address.mapLink')"
     :icon="MapPinIcon"
     target="_blank"
   />
