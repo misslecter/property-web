@@ -15,6 +15,7 @@
   },
   "price": "28,790,000 CZK",
   "priceLabel" : "Price",
+  "backToTop": "Back to Top",
   "address": {
     "value": "Nad Kundratkou, Prague - Prosek",
     "mapLink": "https://maps.app.goo.gl/PiJeeK6m9nTcWy6Z6"

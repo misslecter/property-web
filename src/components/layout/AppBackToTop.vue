@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ArrowUpIcon } from "@heroicons/vue/24/outline";
-
 import { onBeforeUnmount, onMounted, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import AppButtonWithIcon from "@/components/layout/AppButtonWithIcon.vue";
+
+// Access Vue I18n
+const { t } = useI18n();
 
 // Declare a reactive variable to store the scroll position
 const scrollPosition = ref(0);
@@ -28,6 +31,6 @@ onBeforeUnmount(() => {
     class="fixed bottom-0 right-0 p-8 transition-transform"
     :style="{ transform: `translateX(${scrollPosition > 0 ? 0 : 100}%)` }"
   >
-    <AppButtonWithIcon title="Nahoru" to="#top" :icon="ArrowUpIcon" />
+    <AppButtonWithIcon :title="t('backToTop')" to="#top" :icon="ArrowUpIcon" />
   </div>
 </template>
