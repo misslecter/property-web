@@ -45,7 +45,7 @@ function toggleLang() {
 const flagSrc = computed(() => {
   // If we are currently in Czech, the toggle button shows the British flag
   // (to switch to English). Otherwise, show the Czech flag (to switch to Czech).
-  return locale.value === "cs" ? "/flag-uk.png" : "/flag-cz.svg";
+  return locale.value === "cs" ? "/flag-us.webp" : "/flag-cz.svg";
 });
 </script>
 
@@ -60,16 +60,21 @@ const flagSrc = computed(() => {
 
           <div class="flex items-center gap-4">
             <!-- LANGUAGE TOGGLE BUTTON -->
-            <span class="cursor-pointer flex items-center gap-2" @click="toggleLang">
-              <!-- Flag icon that toggles between British and Czech -->
-              <img
-                :src="flagSrc"
-                alt="Toggle Language"
-                class="w-6 h-6"
-              />
-              <!-- Text that says "English" if we're currently in Czech, and vice versa -->
+            <span
+              class="cursor-pointer flex items-center justify-center gap-2 w-[120px] px-2 py-1"
+              @click="toggleLang"
+            >
+            <!-- Flag icon that toggles between British and Czech -->
+            <img
+              :src="flagSrc"
+              alt="Toggle Language"
+              class="w-6 h-6"
+            />
+            <!-- Text that says "English" if we're currently in Czech, and vice versa -->
+            <span class="whitespace-nowrap text-sm font-light block w-full text-center">
               {{ currentLabel }}
             </span>
+          </span>
           </div>
 
           <div class="flex items-center gap-4">
