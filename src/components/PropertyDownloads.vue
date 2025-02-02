@@ -1,29 +1,52 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const appBasePath = import.meta.env.VITE_BASE_PATH;
-const info = inject(GLOBAL_INFO_KEY);
+// Access i18n in Composition API
+const { tm } = useI18n();
 
-if (!info) {
-  throw new Error("Info not provided");
+// We'll also read your base path from an .env variable (if you have one)
+const appBasePath = import.meta.env.VITE_BASE_PATH || "";
+
+// Create a computed property that returns the entire "downloads" object
+// from the i18n messages. We'll cast it to a known shape so TypeScript doesn't complain.
+interface FileItem {
+  name: string;
+  filename: string;
 }
+
+interface DownloadsData {
+  downloadLabel: string;
+  pdfLabel: string;
+  basePath: string;
+  files: FileItem[];
+}
+
+// "t('downloads')" should contain your entire downloads object.
+const downloads = computed(() => {
+  return tm('downloads') as unknown as DownloadsData;
+});
+
+
 </script>
 
 <template>
-  <ul role="list" class="divide-y divide-gray-700 rounded-md border border-gray-700">
+  <ul
+    role="list"
+    class="divide-y divide-gray-700 rounded-md border border-gray-700"
+  >
     <li
-      v-for="file of info.downloads.files"
+      v-for="file in downloads.files"
       :key="file.filename"
       class="flex items-center justify-between py-4 pl-4 pr-5 text-sm/6"
     >
       <div class="flex w-0 flex-1 items-center">
+        <!-- Icon -->
         <svg
           class="size-5 shrink-0 text-gray-400"
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden="true"
-          data-slot="icon"
         >
           <path
             fill-rule="evenodd"
@@ -31,18 +54,26 @@ if (!info) {
             clip-rule="evenodd"
           />
         </svg>
+
+        <!-- File name + label (PDF) -->
         <div class="ml-4 flex min-w-0 flex-1 gap-4">
+          <!-- Show the file name from translations -->
           <span class="truncate font-medium">{{ file.name }}</span>
-          <span class="shrink-0 text-gray-400">PDF</span>
+
+          <!-- Localize "PDF" if you want. Or remove this if you prefer. -->
+          <span class="shrink-0 text-gray-400">{{ downloads.pdfLabel }}</span>
         </div>
       </div>
+
       <div class="ml-4 shrink-0">
+        <!-- "Download" link. The text is localized. The actual PDF filename is from the array. -->
         <a
           class="font-medium text-primary opacity-80 hover:opacity-100"
-          :href="`${appBasePath}/${info.name}/${info.downloads.basePath}/${file.filename}`"
+          :href="`${appBasePath}/${downloads.basePath}/${file.filename}`"
           :download="file.filename"
-          >Stáhnout</a
         >
+          {{ downloads.downloadLabel }}
+        </a>
       </div>
     </li>
   </ul>

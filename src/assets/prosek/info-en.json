@@ -108,7 +108,9 @@
     ]
   },
   "downloads": {
+    "downloadLabel": "Download",
     "basePath": "downloads",
+    "pdfLabel": "PDF",
     "files": [
       {
         "name": "Apartment Datasheet",

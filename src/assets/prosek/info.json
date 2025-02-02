@@ -108,7 +108,9 @@
     ]
   },
   "downloads": {
+    "downloadLabel": "Stáhnout",
     "basePath": "downloads",
+    "pdfLabel": "PDF",
     "files": [
       {
         "name": "Karta bytu",
