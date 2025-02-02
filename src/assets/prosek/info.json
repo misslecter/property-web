@@ -7,13 +7,14 @@
     "luxury": "luxusu"
   },
   "3dTour": "3D prohlídka",
+  "startTour": "Spustit prohlídku",
+  "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
   "language": {
     "czech": "Česky",
     "english": "Anglicky"
   },
   "price": "28 790 000 Kč",
   "priceLabel" : "Cena",
-  "virtualTourLink": "https://my.matterport.com/show/?m=VdxdAxDqy1g",
   "address": {
     "value": "Nad Kundratkou, Praha - Prosek",
     "mapLink": "https://maps.app.goo.gl/PiJeeK6m9nTcWy6Z6"
