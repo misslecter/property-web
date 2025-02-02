@@ -59,7 +59,8 @@
     },
     {
       "name": "floor (out of 4)",
-      "value": "3rd"
+      "value": "3",
+      "unit": "rd"
     }
   ],
   "description": [
