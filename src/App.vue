@@ -27,6 +27,13 @@ const imageIcon: VNode = h("img", {
 
 function setLanguage(language: Language) {
   locale.value = language;
+  window.history.pushState({}, "", `/${language}`);
+}
+
+for (const lang of Object.values(Language)) {
+  if (window.location.pathname === `/${lang}`) {
+    locale.value = lang;
+  }
 }
 </script>
 

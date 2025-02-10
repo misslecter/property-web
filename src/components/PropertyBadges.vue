@@ -5,7 +5,7 @@ import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import assets from "../assets/prosek/assets.json";
 import type { Assets } from "@/model/Assets.ts";
 
-const { t } = useI18n();
+const { t, tm } = useI18n();
 const { badges } = assets as Assets;
 const { basePath, items } = badges;
 
@@ -30,7 +30,7 @@ const projectName = import.meta.env.VITE_PROJECT_NAME;
         <div
           class="whitespace-nowrap text-center font-bold italic md:text-lg"
           å
-          v-html="'&quot;' + t(`${badge.tTitle}`) + '&quot;'"
+          v-html="'&quot;' + tm(`${badge.tTitle}`) + '&quot;'"
         />
 
         <!-- Download link if available -->
