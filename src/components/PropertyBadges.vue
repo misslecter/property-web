@@ -1,22 +1,21 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
+import assets from "../assets/prosek/assets.json";
+import type { Assets } from "@/model/Assets.ts";
 
-// Access Vue I18n
-const { t, tm } = useI18n();
+const { t } = useI18n();
+const { badges } = assets as Assets;
+const { basePath, items } = badges;
 
-// Compute badges dynamically from i18n
-const badges = computed(() => tm("badges"));
-
-const appBasePath = import.meta.env.VITE_BASE_PATH;
+const projectName = import.meta.env.VITE_PROJECT_NAME;
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center gap-12 lg:flex-row">
     <div
-      v-for="(badge, index) in badges"
+      v-for="(badge, index) in items"
       :key="index"
       :class="{
         'animate-fadeInDelayed': Number(index) === 0,
@@ -24,26 +23,27 @@ const appBasePath = import.meta.env.VITE_BASE_PATH;
       }"
       class="flex flex-1 items-center justify-center gap-4 opacity-0 md:gap-8"
     >
-      <img src="../../assets/img/leaf-left.png" alt="Leaf left" class="w-[40px]" />
+      <img src="../assets/img/leaf-left.png" alt="Leaf left" class="w-[40px]" />
 
       <div class="flex flex-1 flex-col items-center gap-2">
         <!-- Title translated using Vue I18n -->
         <div
           class="whitespace-nowrap text-center font-bold italic md:text-lg"
-          v-html="'&quot;' + t(`badges.${index}.title`) + '&quot;'"
+          å
+          v-html="'&quot;' + t(`${badge.tTitle}`) + '&quot;'"
         />
 
         <!-- Download link if available -->
         <AppLinkWithIcon
-          v-if="badge.download"
-          :title="t(`badges.${index}.download.name`)"
-          :to="`${appBasePath}/${t('name')}/${badge.download.basePath}/${badge.download.filename}`"
+          v-if="badge"
+          :title="t(`${badge.tName}`)"
+          :to="`${projectName}/${basePath}/${badge.filename}`"
           :icon="ArrowDownTrayIcon"
-          :download="badge.download.filename"
+          :download="badge.filename"
         />
       </div>
 
-      <img src="../../assets/img/leaf-right.png" alt="Leaf right" class="w-[40px]" />
+      <img src="../assets/img/leaf-right.png" alt="Leaf right" class="w-[40px]" />
     </div>
   </div>
 </template>

@@ -7,12 +7,8 @@ import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 // Get the `t` function from vue-i18n
 const { t } = useI18n();
 
-/**
- * If you still want to build the image path from
- * "projectName" + "/" + "contact.photo", you can do so in a computed.
- */
 const contactPhotoSrc = computed(() => {
-  return `${t("name")}/${t("contact.photo")}`;
+  return `${import.meta.env.VITE_PROJECT_NAME}/${t("contact.photo")}`;
 });
 </script>
 

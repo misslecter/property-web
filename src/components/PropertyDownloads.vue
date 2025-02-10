@@ -1,42 +1,19 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import assets from "../assets/prosek/assets.json";
+import type { Assets } from "@/model/Assets.ts";
 import { useI18n } from "vue-i18n";
 
-// Access i18n in Composition API
-const { tm } = useI18n();
+const { t } = useI18n();
+const { downloads } = assets as Assets;
+const { basePath, items } = downloads;
 
-// We'll also read your base path from an .env variable (if you have one)
-const appBasePath = import.meta.env.VITE_BASE_PATH || "";
-
-// Create a computed property that returns the entire "downloads" object
-// from the i18n messages. We'll cast it to a known shape so TypeScript doesn't complain.
-interface FileItem {
-  name: string;
-  filename: string;
-}
-
-interface DownloadsData {
-  downloadLabel: string;
-  pdfLabel: string;
-  basePath: string;
-  files: FileItem[];
-}
-
-// "t('downloads')" should contain your entire downloads object.
-const downloads = computed(() => {
-  return tm('downloads') as unknown as DownloadsData;
-});
-
-
+const projectName = import.meta.env.VITE_PROJECT_NAME;
 </script>
 
 <template>
-  <ul
-    role="list"
-    class="divide-y divide-gray-700 rounded-md border border-gray-700"
-  >
+  <ul role="list" class="divide-y divide-gray-700 rounded-md border border-gray-700">
     <li
-      v-for="file in downloads.files"
+      v-for="file in items"
       :key="file.filename"
       class="flex items-center justify-between py-4 pl-4 pr-5 text-sm/6"
     >
@@ -58,10 +35,8 @@ const downloads = computed(() => {
         <!-- File name + label (PDF) -->
         <div class="ml-4 flex min-w-0 flex-1 gap-4">
           <!-- Show the file name from translations -->
-          <span class="truncate font-medium">{{ file.name }}</span>
-
-          <!-- Localize "PDF" if you want. Or remove this if you prefer. -->
-          <span class="shrink-0 text-gray-400">{{ downloads.pdfLabel }}</span>
+          <span class="truncate font-medium">{{ t(`${file.tName}`) }}</span>
+          <span class="shrink-0 text-gray-400">PDF</span>
         </div>
       </div>
 
@@ -69,10 +44,10 @@ const downloads = computed(() => {
         <!-- "Download" link. The text is localized. The actual PDF filename is from the array. -->
         <a
           class="font-medium text-primary opacity-80 hover:opacity-100"
-          :href="`${appBasePath}/${downloads.basePath}/${file.filename}`"
+          :href="`${projectName}/${basePath}/${file.filename}`"
           :download="file.filename"
         >
-          {{ downloads.downloadLabel }}
+          {{ t("downloads.label") }}
         </a>
       </div>
     </li>

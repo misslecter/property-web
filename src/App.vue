@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { h, provide, type VNode } from "vue";
+import { h, type VNode } from "vue";
 import { useI18n } from "vue-i18n";
-
-import info from "./assets/prosek/info.json";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
-import type { Info } from "@/model/Info.ts";
 
 import ImageGallery from "@/components/ImageGallery.vue";
 import PropertyDescription from "@/components/PropertyDescription.vue";
@@ -14,15 +10,14 @@ import PropertyAddress from "@/components/PropertyAddress.vue";
 import PropertyContact from "@/components/PropertyContact.vue";
 import PropertyPrice from "@/components/PropertyPrice.vue";
 import AppContainer from "@/components/layout/AppContainer.vue";
-import AppBadges from "@/components/layout/AppBadges.vue";
+import PropertyBadges from "@/components/PropertyBadges.vue";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 import AppBackToTop from "@/components/layout/AppBackToTop.vue";
 import Property3d from "@/components/PropertyVirtualTour.vue";
 import AppLink from "@/components/layout/AppLink.vue";
-import { getLanguageTitle, Language } from "@/model/Language.ts";
-
-provide(GLOBAL_INFO_KEY, info as unknown as Info);
+import { Language } from "@/model/Language.ts";
+import { getLanguageTitle } from "@/model/helpers/getLanguageTitle.ts";
 
 const { locale, t } = useI18n();
 
@@ -75,7 +70,7 @@ function setLanguage(language: Language) {
             {{ t("title.luxury") }}
           </div>
 
-          <AppBadges />
+          <PropertyBadges />
 
           <a href="#gallery" class="mt-8 animate-fadeInDelayed3 opacity-0 hover:opacity-70">
             <ArrowDownIcon class="w-10 animate-bounce" />
