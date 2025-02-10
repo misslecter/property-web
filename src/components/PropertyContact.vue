@@ -5,7 +5,7 @@ import { EnvelopeIcon, PhoneIcon } from "@heroicons/vue/24/outline";
 import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 
 // Get the `t` function from vue-i18n
-const { t } = useI18n();
+const { t, tm } = useI18n();
 
 const contactPhotoSrc = computed(() => {
   return `${import.meta.env.VITE_PROJECT_NAME}/${t("contact.photo")}`;
@@ -36,8 +36,8 @@ const contactPhotoSrc = computed(() => {
     <div class="flex flex-col gap-4 px-4 py-5 sm:p-6">
       <!-- Contact Email -->
       <AppLinkWithIcon
-        :title="t('contact.email')"
-        :to="`mailto:${t('contact.email')}`"
+        :title="tm('contact.email')"
+        :to="`mailto:${tm('contact.email')}`"
         :icon="EnvelopeIcon"
         size="md"
       />
