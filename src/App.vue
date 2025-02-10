@@ -21,12 +21,10 @@ import { getLanguageTitle } from "@/model/helpers/getLanguageTitle.ts";
 
 const { locale, t } = useI18n();
 
-// Icon for "3D" button
 const imageIcon: VNode = h("img", {
   src: "/360.svg",
 });
 
-// Toggle function: switch to English if Czech, or Czech if English
 function setLanguage(language: Language) {
   locale.value = language;
 }
@@ -44,7 +42,7 @@ function setLanguage(language: Language) {
           </div>
 
           <!-- LANGUAGE TOGGLE BUTTON -->
-          <div class="flex flex-1 justify-center gap-4">
+          <div class="order-first flex flex-1 justify-center gap-4 lg:order-none">
             <AppLink
               v-for="lang in Language"
               :title="getLanguageTitle(lang)"
