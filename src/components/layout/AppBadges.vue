@@ -8,7 +8,7 @@ import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 const { t, tm } = useI18n();
 
 // Compute badges dynamically from i18n
-const badges = computed(() => tm('badges'));
+const badges = computed(() => tm("badges"));
 
 const appBasePath = import.meta.env.VITE_BASE_PATH;
 </script>
@@ -18,14 +18,20 @@ const appBasePath = import.meta.env.VITE_BASE_PATH;
     <div
       v-for="(badge, index) in badges"
       :key="index"
-      :class="{ 'animate-fadeInDelayed': Number(index) === 0, 'animate-fadeInDelayed2': Number(index) === 1 }"
+      :class="{
+        'animate-fadeInDelayed': Number(index) === 0,
+        'animate-fadeInDelayed2': Number(index) === 1,
+      }"
       class="flex flex-1 items-center justify-center gap-4 opacity-0 md:gap-8"
     >
       <img src="../../assets/img/leaf-left.png" alt="Leaf left" class="w-[40px]" />
 
       <div class="flex flex-1 flex-col items-center gap-2">
         <!-- Title translated using Vue I18n -->
-        <div class="whitespace-nowrap text-center font-bold italic md:text-lg" v-html="'&quot;' + t(`badges.${index}.title`) + '&quot;'"/>
+        <div
+          class="whitespace-nowrap text-center font-bold italic md:text-lg"
+          v-html="'&quot;' + t(`badges.${index}.title`) + '&quot;'"
+        />
 
         <!-- Download link if available -->
         <AppLinkWithIcon

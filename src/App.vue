@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { h, provide, type VNode } from "vue";
+import { useI18n } from "vue-i18n";
 
 import info from "./assets/prosek/info.json";
-import { h, provide, type VNode } from "vue";
 import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
 import type { Info } from "@/model/Info.ts";
 
@@ -20,6 +19,8 @@ import AppLinkWithIcon from "@/components/layout/AppLinkWithIcon.vue";
 import { ArrowDownIcon } from "@heroicons/vue/24/outline";
 import AppBackToTop from "@/components/layout/AppBackToTop.vue";
 import Property3d from "@/components/PropertyVirtualTour.vue";
+import AppLink from "@/components/layout/AppLink.vue";
+import { getLanguageTitle, Language } from "@/model/Language.ts";
 
 provide(GLOBAL_INFO_KEY, info as unknown as Info);
 
@@ -30,23 +31,10 @@ const imageIcon: VNode = h("img", {
   src: "/360.svg",
 });
 
-// Decide which label to show under the flag:
-// If the page is in Czech, we show "English"; if in English, we show "Česky".
-const currentLabel = computed(() => {
-  return locale.value === "cs" ? "English" : "Česky";
-});
-
 // Toggle function: switch to English if Czech, or Czech if English
-function toggleLang() {
-  locale.value = locale.value === "cs" ? "en" : "cs";
+function setLanguage(language: Language) {
+  locale.value = language;
 }
-
-// A computed property for the flag icon:
-const flagSrc = computed(() => {
-  // If we are currently in Czech, the toggle button shows the British flag
-  // (to switch to English). Otherwise, show the Czech flag (to switch to Czech).
-  return locale.value === "cs" ? "/flag-us.webp" : "/flag-cz.svg";
-});
 </script>
 
 <template>
@@ -54,36 +42,25 @@ const flagSrc = computed(() => {
     <AppContainer>
       <!-- HEADER / NAV AREA -->
       <div class="flex flex-col pb-[4rem]">
-        <div class="flex flex-col items-center justify-between gap-4 py-4 lg:flex-row">
-          <!-- Left side: Address -->
-          <PropertyAddress />
-
-          <div class="flex items-center gap-4">
-            <!-- LANGUAGE TOGGLE BUTTON -->
-            <span
-              class="cursor-pointer flex items-center justify-center gap-2 w-[120px] px-2 py-1"
-              @click="toggleLang"
-            >
-            <!-- Flag icon that toggles between British and Czech -->
-            <img
-              :src="flagSrc"
-              alt="Toggle Language"
-              class="w-6 h-6"
-            />
-            <!-- Text that says "English" if we're currently in Czech, and vice versa -->
-            <span class="whitespace-nowrap text-sm font-light block w-full text-center">
-              {{ currentLabel }}
-            </span>
-          </span>
+        <div class="flex flex-col items-center gap-4 py-4 lg:flex-row">
+          <!-- Address -->
+          <div class="flex flex-1">
+            <PropertyAddress />
           </div>
 
-          <div class="flex items-center gap-4">
-            <!-- 3D TOUR LINK -->
-            <AppLinkWithIcon
-              :title="t('3dTour')"
-              to="#3d"
-              :icon="imageIcon"
+          <!-- LANGUAGE TOGGLE BUTTON -->
+          <div class="flex flex-1 justify-center gap-4">
+            <AppLink
+              v-for="lang in Language"
+              :title="getLanguageTitle(lang)"
+              :active="locale === lang"
+              @click="setLanguage(lang)"
             />
+          </div>
+
+          <!-- 3D TOUR LINK -->
+          <div class="flex flex-1 justify-end">
+            <AppLinkWithIcon :title="t('3dTour')" to="#3d" :icon="imageIcon" />
           </div>
         </div>
 
@@ -92,18 +69,15 @@ const flagSrc = computed(() => {
           <div
             class="animate-fadeIn pt-[4rem] text-center font-headings text-6xl font-thin text-white lg:text-[8rem] lg:leading-[9rem]"
           >
-            {{t('title.live')}}<br />
-            {{t('title.in')}}
-            <span class="font-normal text-primary">{{t('title.perfect')}}</span>
-            {{t('title.luxury')}}
+            {{ t("title.live") }}<br />
+            {{ t("title.in") }}
+            <span class="font-normal text-primary">{{ t("title.perfect") }}</span>
+            {{ t("title.luxury") }}
           </div>
 
           <AppBadges />
 
-          <a
-            href="#gallery"
-            class="mt-8 animate-fadeInDelayed3 opacity-0 hover:opacity-70"
-          >
+          <a href="#gallery" class="mt-8 animate-fadeInDelayed3 opacity-0 hover:opacity-70">
             <ArrowDownIcon class="w-10 animate-bounce" />
           </a>
         </div>
