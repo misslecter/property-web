@@ -3,8 +3,8 @@ import { Language } from "@/model/Language.ts";
 export const getLanguageTitle = (language: Language) => {
   switch (language) {
     case Language.Cs:
-      return "cz";
+      return "CZ";
     case Language.En:
-      return "en";
+      return "EN";
   }
 };

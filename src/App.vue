@@ -25,14 +25,17 @@ const imageIcon: VNode = h("img", {
   src: "/360.svg",
 });
 
-function setLanguage(language: Language) {
+function setLanguage(language: Language, redirect = true) {
   locale.value = language;
-  window.history.pushState({}, "", `/${language}`);
+  document.title = t("documentTitle");
+
+  if (redirect) window.history.pushState({}, "", `/${language}`);
 }
 
+// Change language if route contains '/en' or '/cs'
 for (const lang of Object.values(Language)) {
   if (window.location.pathname === `/${lang}`) {
-    locale.value = lang;
+    setLanguage(lang, false);
   }
 }
 </script>
