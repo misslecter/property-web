@@ -1,26 +1,23 @@
 <script setup lang="ts">
-import { inject, ref } from "vue";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { ref } from "vue";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/24/outline";
+import assets from "../assets/prosek/assets.json";
+import type { Assets } from "@/model/Assets.ts";
 
-const info = inject(GLOBAL_INFO_KEY);
+const projectName = import.meta.env.VITE_PROJECT_NAME;
 
-if (!info) {
-  throw new Error("Info not provided");
-}
-
-const { name, gallery } = info;
-const { images, basePath } = gallery;
+const { gallery } = assets as Assets;
+const { items, basePath } = gallery;
 
 const currentIndex = ref<number>(0);
 const autoplayInterval = ref<number>(0);
 
 const showNext = () => {
-  currentIndex.value = (currentIndex.value + 1) % images.length;
+  currentIndex.value = (currentIndex.value + 1) % items.length;
 };
 
 const showPrevious = () => {
-  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+  currentIndex.value = (currentIndex.value - 1 + items.length) % items.length;
 };
 
 const autoplay = () => {
@@ -42,10 +39,10 @@ autoplay();
         class="flex h-full transition-transform duration-500"
         :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
       >
-        <div v-for="(image, index) in images" :key="image" class="h-full w-full flex-shrink-0">
+        <div v-for="(image, index) in items" :key="image" class="h-full w-full flex-shrink-0">
           <img
             class="h-full w-full object-cover"
-            :src="`${name}/${basePath}/${image}`"
+            :src="`${projectName}/${basePath}/${image}`"
             :alt="'Image ' + (index + 1)"
           />
         </div>
@@ -59,7 +56,7 @@ autoplay();
             stopAutoplay();
           }
         "
-        class="bg-primary absolute left-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
+        class="absolute left-4 top-1/2 -translate-y-1/2 transform border border-black bg-primary px-2 hover:scale-105"
       >
         <ArrowLongLeftIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>
@@ -70,7 +67,7 @@ autoplay();
             stopAutoplay();
           }
         "
-        class="bg-primary absolute right-4 top-1/2 -translate-y-1/2 transform border border-black px-2 hover:scale-105"
+        class="absolute right-4 top-1/2 -translate-y-1/2 transform border border-black bg-primary px-2 hover:scale-105"
       >
         <ArrowLongRightIcon class="h-8 w-8 text-black md:h-10 md:w-10" />
       </button>

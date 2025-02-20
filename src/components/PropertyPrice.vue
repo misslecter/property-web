@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { useI18n } from 'vue-i18n';
 
-const info = inject(GLOBAL_INFO_KEY);
-
-if (!info) {
-  throw new Error("Info not provided");
-}
+// Get the translation function from vue-i18n
+const { t } = useI18n();
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
-    <p class="text-gray-400">Cena</p>
-    <p class="text-4xl font-extrabold text-primary">{{ info.price }}</p>
+    <!-- Translate "Cena" into different languages -->
+    <p class="text-gray-400">{{ t('priceLabel') }}</p>
+
+    <!-- Translate the price string (e.g. "28 790 000 Kč" / "CZK 28,790,000") -->
+    <p class="text-4xl font-extrabold text-primary">{{ t('price') }}</p>
   </div>
 </template>

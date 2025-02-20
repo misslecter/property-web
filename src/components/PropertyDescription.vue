@@ -1,30 +1,18 @@
 <script setup lang="ts">
-import { inject } from "vue";
-import { GLOBAL_INFO_KEY } from "@/model/constants.ts";
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const info = inject(GLOBAL_INFO_KEY);
+// Access Vue I18n
+const { tm } = useI18n();
 
-if (!info) {
-  throw new Error("Info not provided");
-}
+// Compute the description dynamically from i18n
+const description = computed(() => tm('description'));
 </script>
 
 <template>
   <div class="py-8">
-    <a
-      v-if="info.descriptionEn?.length"
-      href="#english"
-      class="italic text-primary opacity-80 transition-opacity hover:opacity-90"
-      >Go to the English description</a
-    >
-    <p v-for="(part, index) of info.description" :key="index" class="my-4 leading-loose">
+    <p v-for="(part, index) in description" :key="index" class="my-4 leading-loose">
       {{ part }}
     </p>
-    <div v-if="info.descriptionEn?.length" id="english" class="pt-4">
-      <hr class="opacity-40" />
-      <p v-for="(part, index) of info.descriptionEn" :key="index" class="mb-4 mt-8 leading-loose">
-        {{ part }}
-      </p>
-    </div>
   </div>
 </template>
