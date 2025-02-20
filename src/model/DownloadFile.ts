@@ -1,4 +1,5 @@
 export type DownloadFile = {
-  name: string;
+  tName: string;
+  tTitle: string;
   filename: string;
 };
