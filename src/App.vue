@@ -29,12 +29,12 @@ function setLanguage(language: Language, redirect = true) {
   locale.value = language;
   document.title = t("documentTitle");
 
-  if (redirect) window.history.pushState({}, "", `/${language}`);
+  if (redirect) window.history.pushState({}, "", `/#${language}`);
 }
 
 // Change language if route contains '/en' or '/cs'
 for (const lang of Object.values(Language)) {
-  if (window.location.pathname === `/${lang}`) {
+  if (window.location.pathname === `/#${lang}`) {
     setLanguage(lang, false);
   }
 }
