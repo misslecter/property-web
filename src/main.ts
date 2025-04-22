@@ -2,10 +2,13 @@ import "./assets/main.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createI18n } from "vue-i18n";
-
-// Import your two JSON files:
+import { createGtag } from "vue-gtag";
 import cs from "@/assets/prosek/locales/cs.json";
 import en from "@/assets/prosek/locales/en.json";
+
+const gtag = createGtag({
+  tagId: "G-YPEWJDJ5NX",
+});
 
 const i18n = createI18n({
   legacy: false, // use Composition API style
@@ -19,4 +22,5 @@ const i18n = createI18n({
 
 const app = createApp(App);
 app.use(i18n);
+app.use(gtag);
 app.mount("#app");
