@@ -5,6 +5,7 @@ import { createI18n } from "vue-i18n";
 import { createGtag } from "vue-gtag";
 import cs from "@/assets/prosek/locales/cs.json";
 import en from "@/assets/prosek/locales/en.json";
+import { initFacebookPixel } from "@/facebook-pixel.ts";
 
 const gtag = createGtag({
   tagId: "G-YPEWJDJ5NX",
@@ -24,3 +25,5 @@ const app = createApp(App);
 app.use(i18n);
 app.use(gtag);
 app.mount("#app");
+
+initFacebookPixel();
